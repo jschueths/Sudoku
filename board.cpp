@@ -5,9 +5,7 @@ Board::Board(){}
 Board::Board(const Board &src)
 {
 	if(this != &src)
-	{
 		copy(src);
-	}
 }
 
 Board::~Board(){}
@@ -15,9 +13,7 @@ Board::~Board(){}
 const Board& Board::operator=(const Board& src)
 {
 	if(this != &src)
-	{
 		copy(src);
-	}
 	return *this;
 }
 
@@ -34,25 +30,9 @@ int& Board::operator()(const int x, const int y)
 void Board::copy(const Board &src)
 {
 	for(size_t i = 0; i < M_SIZE; i++)
-	{
 		for(size_t j = 0; j < M_SIZE; j++)
-		{
 			m_data[i][j] = src.m_data[i][j];
-		}
-	}
 	return;
-}
-
-void Board::print() const
-{
-	for(int i = 0; i < M_SIZE; i++)
-	{
-		for(int j = 0; j < M_SIZE; j++)
-		{
-			std::cout << m_data[i][j] << " | ";
-		}
-		std::cout << std::endl;
-	}
 }
 
 std::ostream& operator<<(std::ostream &out, const Board &brd)
@@ -63,9 +43,7 @@ std::ostream& operator<<(std::ostream &out, const Board &brd)
 		{
 			out << brd.m_data[i][j];
 			if(j != M_SIZE - 1)
-			{
 				out << " ";
-			}
 		}
 		out << std::endl;
 	}

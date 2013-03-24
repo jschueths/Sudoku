@@ -1,12 +1,14 @@
 #ifndef __BOARD_H__
 #define __BOARD_H__
 #include <iostream>
+#include <fstream>
 
 const int M_SIZE = 9;
 class Board;
 
 std::ostream& operator<<(std::ostream &out, const Board &brd);
 std::istream& operator>>(std::istream &in, Board &brd);
+
 class Board
 {
 	public:
