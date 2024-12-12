@@ -3,6 +3,7 @@ sudoku puzzles. Puzzles are passed into the program via space delimited
 9x9 text files. Blank cells are represented by '0'.
 
 Build Instructions:
+    - Requires: CMake >= 3.28
     - Requires: g++-14, MSVC 17 (VS 2022), or clang++-18
     - Requires: ninja-build
 
