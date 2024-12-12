@@ -2,11 +2,13 @@ This is a very simple program using recursion to solve
 sudoku puzzles. Puzzles are passed into the program via space delimited
 9x9 text files. Blank cells are represented by '0'.
 
-To build:
-	If CMake is installed:
-		$ cmake .
-		$ make
-	If CMake is not installed:
-		$ g++ *.cpp -o sudoku_solver
+Build Instructions:
+    - Requires: g++-14, MSVC 17 (VS 2022), or clang++-18
+    - Requires: ninja-build
 
+    $ cmake -G Ninja -B build -S .
+    $ cmake --build build --target all
+
+Run:
+    $ ./build/bin/solver -i ./example/puzzle.puz 
 
