@@ -1,4 +1,32 @@
-#include "board.h"
+module;
+
+import stl;
+
+export module board;
+
+const int M_SIZE = 9;
+export class Board;
+
+export std::ostream& operator<<(std::ostream &out, const Board &brd);
+export std::istream& operator>>(std::istream &in, Board &brd);
+using size_t = std::size_t;
+export class Board
+{
+	public:
+		Board();
+		Board(const Board &src);
+		~Board();
+		const Board& operator=(const Board &src);
+		const int& operator()(const int x, const int y) const;
+		int& operator()(const int x, const int y);
+		void print() const;
+		friend std::ostream& operator<<(std::ostream &out, const Board &brd);
+		friend std::istream& operator>>(std::istream &in, Board &brd);
+
+	private:
+		int m_data[M_SIZE][M_SIZE];
+		void copy(const Board &src);
+};
 
 Board::Board(){}
 

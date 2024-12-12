@@ -1,10 +1,6 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>
-#include <cstring>
-#include "solver.h"
-#include "board.h"
+import stl;
+import solver;
+import board;
 
 bool parseArgs(const int argc, char * argv[], std::string &input, std::string &output);
 void usage(std::string call);
@@ -72,7 +68,7 @@ bool parseArgs(const int argc, char *argv[], std::string &input, std::string &ou
 {
 	for(int i = 1; i < argc; i++)
 	{
-		if(strcmp(argv[i], "-i") == 0)
+		if(std::strcmp(argv[i], "-i") == 0)
 		{
 			if(i + 1 != argc)
 				input = argv[++i];
@@ -80,7 +76,7 @@ bool parseArgs(const int argc, char *argv[], std::string &input, std::string &ou
 				return false;
 			continue;
 		}
-		if(strcmp(argv[i], "-o") == 0)
+		if(std::strcmp(argv[i], "-o") == 0)
 		{
 			if(i + 1 != argc)
 				output = argv[++i];

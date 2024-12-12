@@ -1,11 +1,18 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+cmake_minimum_required(VERSION 3.28)
 
-add_executable(sudoku_solver
-	main.cpp
-	solver.h
-	solver.cpp
-	board.h
-	board.cpp
+project(sudoku_solver
+    VERSION 0.1.0
+    DESCRIPTION ""
+    HOMEPAGE_URL "https://github.com/jschueths/Sudoku"
+    LANGUAGES CXX
 )
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/Modules)
+include(project-api)
+
+# Add project sources
+add_subdirectory(src)
+
+# Add project tests
+#add_subdirectory(test)
 
